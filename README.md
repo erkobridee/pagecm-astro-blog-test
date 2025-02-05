@@ -1,4 +1,4 @@
-# AstroPaper 📄
+# Pages CMS + AstroPaper 📄
 
 ![AstroPaper](public/astropaper-og.jpg)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -94,10 +94,10 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 **UI/UX** - [Figma](https://figma.com)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
 **Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
+**Code Formatting** - [Prettier](https://prettier.io/) <!-- **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  -->
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
 **Linting** - [ESLint](https://eslint.org)
+**Headless CMS** - [Pages CMS](https://pagescms.org/) | [GitHub Repo](https://github.com/pages-cms/pages-cms)
 
 ## 👨🏻‍💻 Running Locally
 

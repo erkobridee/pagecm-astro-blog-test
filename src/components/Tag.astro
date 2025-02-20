@@ -1,4 +1,6 @@
 ---
+import { redefineUrl } from '@utils/redefineUrl';
+
 export interface Props {
   tag: string;
   size?: "sm" | "lg";
@@ -13,7 +15,7 @@ const { tag, size = "sm" } = Astro.props;
   }`}
 >
   <a
-    href={`/tags/${tag}/`}
+    href={redefineUrl(`/tags/${tag}/`)}
     transition:name={tag}
     class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group`}
   >

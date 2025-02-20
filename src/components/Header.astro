@@ -1,5 +1,8 @@
 ---
 import { LOGO_IMAGE, SITE } from "@config";
+
+import { redefineUrl } from '@utils/redefineUrl';
+
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -18,7 +21,7 @@ const { activeNav } = Astro.props;
         {
           LOGO_IMAGE.enable ? (
             <img
-              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
+              src={redefineUrl(`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`)}
               alt={SITE.title}
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
@@ -56,23 +59,23 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
+            <a href={redefineUrl("/posts/")} class={activeNav === "posts" ? "active" : ""}>
               Posts
             </a>
           </li>
           <li>
-            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
+            <a href={redefineUrl("/tags/")} class={activeNav === "tags" ? "active" : ""}>
               Tags
             </a>
           </li>
           <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
+            <a href={redefineUrl("/about/")} class={activeNav === "about" ? "active" : ""}>
               About
             </a>
           </li>
           <li>
             <LinkButton
-              href="/search/"
+              href={redefineUrl("/search/")}
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === "search" ? "active" : ""
               } flex`}

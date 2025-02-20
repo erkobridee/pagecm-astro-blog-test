@@ -1,9 +1,13 @@
 ---
-import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
+
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
+
+import { SITE } from "@config";
+
+import { redefineUrl } from '@utils/redefineUrl';
 ---
 
 <Layout title={`404 Not Found | ${SITE.title}`}>
@@ -15,7 +19,7 @@ import LinkButton from "@components/LinkButton.astro";
       <span aria-hidden="true">¯\_(ツ)_/¯</span>
       <p>Page Not Found</p>
       <LinkButton
-        href="/"
+        href={redefineUrl("/")}
         className="my-6 text-lg underline decoration-dashed underline-offset-8"
       >
         Go back home

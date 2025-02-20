@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from './types';
 
 export const SITE: Site = {
-  website: 'https://erkobridee.com/', // replace this with your deployed domain
+  website: 'https://erkobridee.github.io', // replace this with your deployed domain
   author: 'Erko Bridee',
   desc: 'A minimal, responsive and SEO-friendly Astro blog theme managed by Pages CMS.',
   title: 'AstroPaper Blog Test',
@@ -16,12 +16,7 @@ export const LOCALE = {
   langTag: ['en-EN'], // BCP 47 Language Tags. Set this empty [] to use the environment default
 } as const;
 
-export const LOGO_IMAGE = {
-  enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
-};
+export const LOGO_IMAGE = { enable: false, svg: true, width: 216, height: 46 };
 
 export const SOCIALS: SocialObjects = [
   {

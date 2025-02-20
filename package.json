@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "unset:git-hooks-path": "git config --unset core.hooksPath",
+    "simple-git-hooks": "npx simple-git-hooks",
+    "postinstall": "is-ci || npm run simple-git-hooks",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && jampack ./dist",
@@ -12,7 +15,6 @@
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "cz": "cz",
-    "prepare": "husky install",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -42,13 +44,14 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.57.1",
     "eslint-plugin-astro": "0.34.0",
-    "husky": "8.0.3",
+    "is-ci": "4.1.0",
     "lint-staged": "15.4.3",
     "prettier": "3.5.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "simple-git-hooks": "2.11.1"
   },
   "config": {
     "commitizen": {
@@ -59,5 +62,8 @@
     "*.{js,jsx,ts,tsx,md,mdx,json,astro}": [
       "prettier --write --plugin=prettier-plugin-astro"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }

@@ -40,7 +40,7 @@
     "@divriots/jampack": "0.33.0",
     "@tailwindcss/typography": "0.5.16",
     "@types/github-slugger": "2.0.0",
-    "@types/react": "18.3.18",
+    "@types/react": "19.0.10",
     "@typescript-eslint/parser": "6.21.0",
     "astro-eslint-parser": "1.2.1",
     "commitizen": "4.3.1",
@@ -53,8 +53,8 @@
     "prettier": "3.5.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "simple-git-hooks": "2.11.1"
   },
   "config": {

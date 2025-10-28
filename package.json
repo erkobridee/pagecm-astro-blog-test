@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "3.1.9",
-    "@astrojs/check": "0.9.4",
+    "@astrojs/check": "0.9.5",
     "@astrojs/rss": "4.0.13",
     "@resvg/resvg-js": "2.6.2",
     "astro": "4.16.19",

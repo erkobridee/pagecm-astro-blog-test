@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/mdx": "3.1.9",
     "@astrojs/check": "0.9.6",
-    "@astrojs/rss": "4.0.14",
+    "@astrojs/rss": "4.0.15",
     "@resvg/resvg-js": "2.6.2",
     "astro": "4.16.19",
     "fuse.js": "7.1.0",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@astrojs/react": "3.6.3",
-    "@astrojs/sitemap": "3.6.0",
+    "@astrojs/sitemap": "3.7.0",
     "@astrojs/tailwind": "5.1.5",
     "@divriots/jampack": "0.34.0",
     "@tailwindcss/typography": "0.5.19",

@@ -37,7 +37,7 @@
     "@astrojs/react": "3.6.3",
     "@astrojs/sitemap": "3.7.1",
     "@astrojs/tailwind": "5.1.5",
-    "@divriots/jampack": "0.34.0",
+    "@divriots/jampack": "0.34.1",
     "@tailwindcss/typography": "0.5.19",
     "@types/github-slugger": "2.0.0",
     "@types/react": "18.3.28",

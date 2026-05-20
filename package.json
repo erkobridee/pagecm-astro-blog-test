@@ -40,7 +40,7 @@
     "@divriots/jampack": "0.34.1",
     "@tailwindcss/typography": "0.5.19",
     "@types/github-slugger": "2.0.0",
-    "@types/react": "18.3.28",
+    "@types/react": "18.3.29",
     "@typescript-eslint/parser": "6.21.0",
     "astro-eslint-parser": "1.4.0",
     "commitizen": "4.3.1",

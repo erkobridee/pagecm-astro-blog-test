@@ -21,7 +21,7 @@
     "gh-pages-preview": "cross-env GITHUB_PAGES=true GITHUB_PAGES_PREVIEW=true npm run preview"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.10",
+    "@astrojs/check": "0.9.12",
     "@astrojs/rss": "4.0.19",
     "@resvg/resvg-js": "2.6.2",
     "astro": "5.18.2",

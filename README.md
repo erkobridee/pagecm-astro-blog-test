@@ -156,3 +156,16 @@ Licensed under the MIT License, Copyright © 2023
 ---
 
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+
+
+## 🚧 Upgrade
+
+- [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
+
+- [Upgrade to Astro v5 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v5/)
+
+- [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
+
+- [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
+
+- [Upgrade guide | Tailwind CSS Docs](https://tailwindcss.com/docs/upgrade-guide) - Upgrading your Tailwind CSS projects from v3 to v4.

@@ -1,6 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* 1. Reset breakpoints to match `theme.screens: { sm: "640px" }` */
+@theme {
+  /*--breakpoint-*: initial;*/
+  /*--*: initial;*/
+  --breakpoint-sm: 640px;
+
+  /* 2. Extend font family */
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* 3. Scoped Color Utilities (replaces textColor, backgroundColor, borderColor, etc.) */
+  --text-color-skin-base: rgb(var(--color-text-base));
+  --text-color-skin-accent: rgb(var(--color-accent));
+  --text-color-skin-inverted: rgb(var(--color-fill));
+
+  --background-color-skin-fill: rgb(var(--color-fill));
+  --background-color-skin-accent: rgb(var(--color-accent));
+  --background-color-skin-inverted: rgb(var(--color-text-base));
+  --background-color-skin-card: rgb(var(--color-card));
+  --background-color-skin-card-muted: rgb(var(--color-card-muted));
+
+  --outline-color-skin-fill: rgb(var(--color-accent));
+
+  --border-color-skin-line: rgb(var(--color-border));
+  --border-color-skin-fill: rgb(var(--color-text-base));
+  --border-color-skin-accent: rgb(var(--color-accent));
+
+  --fill-skin-base: rgb(var(--color-text-base));
+  --fill-skin-accent: rgb(var(--color-accent));
+}
+
+/* 4. Typography overrides (replaces `theme.extend.typography`) */
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  .prose pre,
+  .prose code {
+    color: inherit;
+  }
+}
+
+@utility display-none {
+  @apply hidden;
+}
+
+@utility focus-outline {
+  @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+}
 
 @layer base {
   :root,
@@ -12,6 +73,7 @@
     --color-card-muted: 205, 205, 205;
     --color-border: 236, 233, 233;
   }
+
   html[data-theme="dark"] {
     --color-fill: 33, 39, 55;
     --color-text-base: 234, 237, 243;
@@ -20,17 +82,21 @@
     --color-card-muted: 138, 51, 2;
     --color-border: 171, 75, 8;
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
   }
+
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+
+  /*
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
-    selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+    @apply flex min-h-svh flex-col bg-skin-fill font-mono text-skin-base 
+    selection:bg-skin-accent/70 selection:text-skin-inverted;
   }
   section,
   footer {
@@ -49,28 +115,28 @@
     sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
+    @apply prose-headings:mb-3! prose-headings:!text-skin-base 
     prose-h3:italic prose-p:!text-skin-base 
-    prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
+    prose-a:!text-skin-base prose-a:decoration-dashed! prose-a:underline-offset-8
     hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
     prose-figcaption:!text-skin-base prose-figcaption:opacity-70
     prose-strong:!text-skin-base
 
     
-    prose-code:rounded prose-code:bg-skin-card 
+    prose-code:rounded-sm prose-code:bg-skin-card 
     prose-code:bg-opacity-75 prose-code:p-1 
-    prose-code:before:!content-none prose-code:after:!content-none
+    prose-code:before:content-none! prose-code:after:content-none!
     prose-ol:!text-skin-base 
     prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
     prose-table:text-skin-base prose-th:border
     prose-th:border-skin-line prose-td:border 
-    prose-td:border-skin-line prose-img:!my-2 
+    prose-td:border-skin-line prose-img:my-2! 
     prose-img:mx-auto prose-img:border-2 
     prose-img:border-skin-line prose-hr:!border-skin-line;
   }
   .prose a {
-    @apply break-words hover:!text-skin-accent;
+    @apply wrap-break-word hover:!text-skin-accent;
   }
   .prose thead th:first-child,
   tbody td:first-child,
@@ -86,6 +152,78 @@
   .prose summary {
     @apply focus-outline;
   }
+  .prose h2#table-of-contents + p {
+    @apply hidden;
+  }
+  */
+
+  body {
+    @apply flex min-h-svh flex-col bg-skin-fill font-mono text-skin-base 
+    selection:bg-skin-accent/70 selection:text-skin-inverted;
+  }
+
+  section,
+  footer {
+    @apply mx-auto max-w-3xl px-4;
+  }
+
+  a {
+    @apply outline-2 outline-offset-1 outline-skin-fill 
+    focus-visible:no-underline focus-visible:outline-dashed;
+  }
+
+  svg {
+    @apply inline-block size-6 fill-skin-base group-hover:fill-skin-accent;
+  }
+
+  svg.icon-tabler {
+    @apply inline-block size-6 scale-125 fill-transparent 
+    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
+    sm:scale-110;
+  }
+
+  .prose {
+    @apply prose-headings:mb-3! prose-headings:text-skin-base! 
+    prose-h3:italic prose-p:text-skin-base! 
+    prose-a:text-skin-base! prose-a:decoration-dashed! prose-a:underline-offset-8
+    hover:prose-a:text-skin-accent prose-blockquote:border-l-skin-accent/50!
+    prose-blockquote:opacity-80
+    prose-figcaption:text-skin-base! prose-figcaption:opacity-70
+    prose-strong:text-skin-base!
+    prose-code:rounded-sm prose-code:bg-skin-card/75 
+    prose-code:p-1 
+    prose-code:before:content-none! prose-code:after:content-none!
+    prose-ol:text-skin-base! 
+    prose-ul:overflow-x-clip prose-ul:text-skin-base! prose-li:marker:text-skin-accent!
+    prose-table:text-skin-base prose-th:border
+    prose-th:border-skin-line prose-td:border 
+    prose-td:border-skin-line prose-img:my-2! 
+    prose-img:mx-auto prose-img:border-2 
+    prose-img:border-skin-line prose-hr:border-skin-line!;
+  }
+
+  .prose a {
+    @apply wrap-break-word hover:text-skin-accent!;
+  }
+
+  .prose thead th:first-child,
+  .prose tbody td:first-child,
+  .prose tfoot td:first-child {
+    padding-left: 0.5714286em;
+  }
+
+  .prose h2#table-of-contents {
+    @apply mb-2;
+  }
+
+  .prose details {
+    @apply inline-block cursor-pointer select-none text-skin-base;
+  }
+
+  .prose summary {
+    @apply focus-outline;
+  }
+
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
@@ -122,14 +260,5 @@
 
   pre > code {
     white-space: pre;
-  }
-}
-
-@layer components {
-  .display-none {
-    @apply hidden;
-  }
-  .focus-outline {
-    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }

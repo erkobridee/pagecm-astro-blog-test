@@ -1,13 +1,13 @@
 ---
-import { LOGO_IMAGE, SITE } from "@config";
+import { LOGO_IMAGE, SITE } from '@config';
 
 import { redefineUrl } from '@utils/redefineUrl';
 
-import Hr from "./Hr.astro";
-import LinkButton from "./LinkButton.astro";
+import Hr from './Hr.astro';
+import LinkButton from './LinkButton.astro';
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav?: 'posts' | 'tags' | 'about' | 'search';
 }
 
 const { activeNav } = Astro.props;
@@ -17,11 +17,13 @@ const { activeNav } = Astro.props;
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href={redefineUrl("/")} class="logo whitespace-nowrap">
+      <a href={redefineUrl('/')} class="logo whitespace-nowrap">
         {
           LOGO_IMAGE.enable ? (
             <img
-              src={redefineUrl(`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`)}
+              src={redefineUrl(
+                `/assets/${LOGO_IMAGE.svg ? 'logo.svg' : 'logo.png'}`
+              )}
               alt={SITE.title}
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
@@ -59,25 +61,34 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href={redefineUrl("/posts/")} class={activeNav === "posts" ? "active" : ""}>
+            <a
+              href={redefineUrl('/posts/')}
+              class={activeNav === 'posts' ? 'active' : ''}
+            >
               Posts
             </a>
           </li>
           <li>
-            <a href={redefineUrl("/tags/")} class={activeNav === "tags" ? "active" : ""}>
+            <a
+              href={redefineUrl('/tags/')}
+              class={activeNav === 'tags' ? 'active' : ''}
+            >
               Tags
             </a>
           </li>
           <li>
-            <a href={redefineUrl("/about/")} class={activeNav === "about" ? "active" : ""}>
+            <a
+              href={redefineUrl('/about/')}
+              class={activeNav === 'about' ? 'active' : ''}
+            >
               About
             </a>
           </li>
           <li>
             <LinkButton
-              href={redefineUrl("/search/")}
+              href={redefineUrl('/search/')}
               className={`focus-outline p-3 sm:p-1 ${
-                activeNav === "search" ? "active" : ""
+                activeNav === 'search' ? 'active' : ''
               } flex`}
               ariaLabel="search"
               title="Search"
@@ -120,6 +131,8 @@ const { activeNav } = Astro.props;
 </header>
 
 <style>
+  @reference "@styles/base.css";
+
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
@@ -195,24 +208,24 @@ const { activeNav } = Astro.props;
 <script>
   function toggleNav() {
     // Toggle menu
-    const menuBtn = document.querySelector(".hamburger-menu");
-    const menuIcon = document.querySelector(".menu-icon");
-    const menuItems = document.querySelector("#menu-items");
+    const menuBtn = document.querySelector('.hamburger-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const menuItems = document.querySelector('#menu-items');
 
-    menuBtn?.addEventListener("click", () => {
-      const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-      menuIcon?.classList.toggle("is-active");
-      menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
+    menuBtn?.addEventListener('click', () => {
+      const menuExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuIcon?.classList.toggle('is-active');
+      menuBtn.setAttribute('aria-expanded', menuExpanded ? 'false' : 'true');
       menuBtn.setAttribute(
-        "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
+        'aria-label',
+        menuExpanded ? 'Open Menu' : 'Close Menu'
       );
-      menuItems?.classList.toggle("display-none");
+      menuItems?.classList.toggle('display-none');
     });
   }
 
   toggleNav();
 
   // Runs on view transitions navigation
-  document.addEventListener("astro:after-swap", toggleNav);
+  document.addEventListener('astro:after-swap', toggleNav);
 </script>

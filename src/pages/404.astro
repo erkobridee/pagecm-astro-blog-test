@@ -1,11 +1,11 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import LinkButton from '@components/LinkButton.astro';
 
-import { SITE } from "@config";
+import { SITE } from '@config';
 
 import { redefineUrl } from '@utils/redefineUrl';
 ---
@@ -19,7 +19,7 @@ import { redefineUrl } from '@utils/redefineUrl';
       <span aria-hidden="true">¯\_(ツ)_/¯</span>
       <p>Page Not Found</p>
       <LinkButton
-        href={redefineUrl("/")}
+        href={redefineUrl('/')}
         className="my-6 text-lg underline decoration-dashed underline-offset-8"
       >
         Go back home
@@ -31,6 +31,8 @@ import { redefineUrl } from '@utils/redefineUrl';
 </Layout>
 
 <style>
+  @reference "@styles/base.css";
+
   #main-content {
     @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
   }

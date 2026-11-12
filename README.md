@@ -58,12 +58,12 @@ Inside of AstroPaper, you'll see the following folders and files:
 │   ├── content/
 │   │   |  blog/
 │   │   |    └── some-blog-posts.md
-│   │   └── config.ts
 │   ├── layouts/
 │   └── pages/
 │   └── styles/
 │   └── utils/
 │   └── config.ts
+│   └── content.config.ts
 │   └── types.ts
 └── package.json
 ```
@@ -94,9 +94,10 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 **UI/UX** - [Figma](https://figma.com)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
 **Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/) <!-- **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  -->
+**Code Formatting** - [Prettier](https://prettier.io/) <!-- **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  -->  
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
-**Linting** - [ESLint](https://eslint.org)
+**Linting** - [ESLint](https://eslint.org)  
+**Template** - [Astro Paper](https://astro-paper.pages.dev/) | [GitHub Repo](https://github.com/satnaing/astro-paper)  
 **Headless CMS** - [Pages CMS](https://pagescms.org/) | [GitHub Repo](https://github.com/pages-cms/pages-cms)
 
 ## 👨🏻‍💻 Running Locally
@@ -151,7 +152,7 @@ If you have any suggestions/feedback, you can contact me via [my email](mailto:c
 
 ## 📜 License
 
-Licensed under the MIT License, Copyright © 2023
+Licensed under the MIT License, Copyright © 2026
 
 ---
 

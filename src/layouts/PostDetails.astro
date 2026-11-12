@@ -37,7 +37,7 @@ const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
 
 const ogUrl = ogImageUrl
   ? redefineUrl(ogImageUrl)
-  : redefineUrl(`/posts/${slugifyStr(title)}/index.png`);
+  : redefineUrl(`/posts/${slugifyStr(title)}/og.png`);
 
 const layoutProps = {
   title: `${title} | ${SITE.title}`,

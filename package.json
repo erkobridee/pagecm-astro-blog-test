@@ -16,15 +16,15 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "cz": "cz",
     "lint": "eslint .",
+    "tsc": "npx tsc --noEmit",
     "gh-pages-build": "cross-env GITHUB_PAGES=true npm run build",
     "gh-pages-preview": "cross-env GITHUB_PAGES=true GITHUB_PAGES_PREVIEW=true npm run preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "3.1.9",
     "@astrojs/check": "0.9.10",
     "@astrojs/rss": "4.0.19",
     "@resvg/resvg-js": "2.6.2",
-    "astro": "4.16.19",
+    "astro": "5.18.2",
     "fuse.js": "7.5.0",
     "github-slugger": "2.0.0",
     "remark-collapse": "0.1.2",
@@ -34,7 +34,8 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@astrojs/react": "3.6.3",
+    "@astrojs/mdx": "4.3.14",
+    "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.7.4",
     "@astrojs/tailwind": "5.1.5",
     "@divriots/jampack": "0.34.2",
@@ -69,5 +70,16 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "allowScripts": {
+    "@swc/core@1.10.18": true,
+    "esbuild@0.27.7": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.21.5": true,
+    "esbuild@0.20.2": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true,
+    "sharp@0.33.5": true,
+    "simple-git-hooks@2.14.0": true
   }
 }

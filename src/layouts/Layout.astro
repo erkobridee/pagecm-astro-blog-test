@@ -1,11 +1,11 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 
-import "@styles/base.css";
+import '@styles/base.css';
 
-import { LOCALE, SITE } from "@config";
+import { LOCALE, SITE } from '@config';
 
-import {redefineUrl} from '@utils/redefineUrl';
+import { redefineUrl } from '@utils/redefineUrl';
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -20,34 +20,32 @@ export interface Props {
   scrollSmooth?: boolean;
 }
 
-const buildUrl = (pathname: string | URL) => new URL(pathname, Astro.site ?? Astro.url.origin).href;
+const buildUrl = (pathname: string | URL) =>
+  new URL(pathname, Astro.site ?? Astro.url.origin).href;
 
 const {
   title = SITE.title,
   author = SITE.author,
   description = SITE.desc,
-  ogImage = SITE.ogImage ?? "og.png",
+  ogImage = SITE.ogImage ?? 'og.png',
   canonicalURL = buildUrl(Astro.url.pathname),
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
 } = Astro.props;
 
-const socialImageURL = new URL(
-  redefineUrl(ogImage),
-  Astro.url.origin
-).href;
+const socialImageURL = new URL(redefineUrl(ogImage), Astro.url.origin).href;
 ---
 
 <!doctype html>
 <html
   lang=`${LOCALE.lang ?? "en"}`
-  class={`${scrollSmooth && "scroll-smooth"}`}
+  class={`${scrollSmooth && 'scroll-smooth'}`}
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={redefineUrl("/favicon.svg")} />
+    <link rel="icon" type="image/svg+xml" href={redefineUrl('/favicon.svg')} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -111,9 +109,9 @@ const socialImageURL = new URL(
       )
     }
 
-    <ViewTransitions />
+    <ClientRouter />
 
-    <script is:inline src={redefineUrl("/toggle-theme.js")}></script>
+    <script is:inline src={redefineUrl('/toggle-theme.js')}></script>
   </head>
   <body>
     <slot />

@@ -166,6 +166,10 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
   - [potentially breaking changes](https://docs.astro.build/en/guides/upgrade-to/v5/#breaking-changes)
 
   ```
+  git checkout -b upgrade/astro-v5
+  ```
+
+  ```
   npm install -S astro@5.18.2
   ```
 

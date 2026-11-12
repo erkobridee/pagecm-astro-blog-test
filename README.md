@@ -173,8 +173,12 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
   npm install -D @astrojs/mdx@^4.0.0 @astrojs/react@^4.0.0 @astrojs/sitemap@^3.2.1
   ```
 
+<!--
+
 - [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
 
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
 
 - [Upgrade guide | Tailwind CSS Docs](https://tailwindcss.com/docs/upgrade-guide) - Upgrading your Tailwind CSS projects from v3 to v4.
+
+-->

@@ -165,6 +165,14 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 
   - [potentially breaking changes](https://docs.astro.build/en/guides/upgrade-to/v5/#breaking-changes)
 
+  ```
+  npm install -S astro@5.18.2
+  ```
+
+  ```
+  npm install -D @astrojs/mdx@^4.0.0 @astrojs/react@^4.0.0 @astrojs/sitemap@^3.2.1
+  ```
+
 - [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
 
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)

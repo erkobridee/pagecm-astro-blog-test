@@ -16,6 +16,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
+concurrency:
+  group: deploy-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 # Allow this job to clone the repo and create a page deployment
 permissions:
   contents: write
@@ -29,7 +33,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
 
-      - name: Setup Node 22.x
+      - name: Setup Node 24.x
         uses: actions/setup-node@v7
         with:
           node-version: 24.x

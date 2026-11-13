@@ -54,7 +54,7 @@ If you omit `tags` in a blog post (in other words, if no tag is specified), the 
 export const blogSchema = z.object({
   // ---
   draft: z.boolean().optional(),
-  tags: z.array(z.string()).default(["others"]), // replace "others" with whatever you want
+  tags: z.array(z.string()).default(['others']), // replace "others" with whatever you want
   // ---
 });
 ```
@@ -76,7 +76,7 @@ tags:
   - some
   - example
   - tags
-ogImage: ""
+ogImage: ''
 description: This is the example description of the example post.
 canonicalURL: https://example.org/my-article-was-already-posted-here
 ---

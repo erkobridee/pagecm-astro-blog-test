@@ -112,8 +112,8 @@ Finally we can configure it for our blog in `src/config.ts` under `SOCIALS`. Set
 export const SOCIALS: SocialObjects = [
   /* others */
   {
-    name: "StackOverflow",
-    href: "https://stackoverflow.com/search?q=astropaper",
+    name: 'StackOverflow',
+    href: 'https://stackoverflow.com/search?q=astropaper',
     linkTitle: `See what questions there are about ${SITE.title} on StackOverflow`,
     active: true,
   },

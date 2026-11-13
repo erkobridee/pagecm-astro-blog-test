@@ -6,10 +6,12 @@ import remarkCollapse from 'remark-collapse';
 import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
-import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 
 import sitemap from '@astrojs/sitemap';
+
+// https://tailwindcss.com/docs/installation/framework-guides/astro
+import tailwindcss from '@tailwindcss/vite';
 
 import { SITE } from './src/config';
 
@@ -24,17 +26,15 @@ const isGitHubPagesBuild = !!process.env.GITHUB_PAGES;
 const isGitHubPagesPreview = !!process.env.GITHUB_PAGES_PREVIEW;
 
 const baseConfig: AstroUserConfig = {
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    mdx(),
-    react(),
-    sitemap(),
-  ],
+  integrations: [mdx(), react(), sitemap()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: 'Table of contents' }]],
     shikiConfig: { theme: 'one-dark-pro', wrap: true },
   },
-  vite: { optimizeDeps: { exclude: ['@resvg/resvg-js'] } },
+  vite: {
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
+    plugins: [tailwindcss()],
+  },
   scopedStyleStrategy: 'where',
 };
 

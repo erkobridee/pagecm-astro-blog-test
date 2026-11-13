@@ -58,12 +58,12 @@ Inside of AstroPaper, you'll see the following folders and files:
 │   ├── content/
 │   │   |  blog/
 │   │   |    └── some-blog-posts.md
-│   │   └── config.ts
 │   ├── layouts/
 │   └── pages/
 │   └── styles/
 │   └── utils/
 │   └── config.ts
+│   └── content.config.ts
 │   └── types.ts
 └── package.json
 ```
@@ -94,9 +94,10 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 **UI/UX** - [Figma](https://figma.com)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
 **Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/) <!-- **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  -->
+**Code Formatting** - [Prettier](https://prettier.io/) <!-- **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  -->  
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
-**Linting** - [ESLint](https://eslint.org)
+**Linting** - [ESLint](https://eslint.org)  
+**Template** - [Astro Paper](https://astro-paper.pages.dev/) | [GitHub Repo](https://github.com/satnaing/astro-paper)  
 **Headless CMS** - [Pages CMS](https://pagescms.org/) | [GitHub Repo](https://github.com/pages-cms/pages-cms)
 
 ## 👨🏻‍💻 Running Locally
@@ -151,7 +152,7 @@ If you have any suggestions/feedback, you can contact me via [my email](mailto:c
 
 ## 📜 License
 
-Licensed under the MIT License, Copyright © 2023
+Licensed under the MIT License, Copyright © 2026
 
 ---
 
@@ -159,30 +160,25 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 
 ## 🚧 Upgrade
 
-- [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
-
-- [Upgrade to Astro v5 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v5/)
-
-  - [potentially breaking changes](https://docs.astro.build/en/guides/upgrade-to/v5/#breaking-changes)
-
-  ```
-  git checkout -b upgrade/astro-v5
-  ```
-
-  ```
-  npm install -S astro@5.18.2
-  ```
-
-  ```
-  npm install -D @astrojs/mdx@^4.0.0 @astrojs/react@^4.0.0 @astrojs/sitemap@^3.2.1
-  ```
-
 <!--
+
+- [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
 
 - [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
 
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
 
+```
+git checkout -b upgrade/deps
+```
+-->
+
 - [Upgrade guide | Tailwind CSS Docs](https://tailwindcss.com/docs/upgrade-guide) - Upgrading your Tailwind CSS projects from v3 to v4.
 
--->
+  - [[Gist] Tailwind CSS v3 to v4 Migration Guide](https://gist.github.com/takunagai/148b5a564f1e75a9f44f6bd314b55801)
+
+  - [Tailwind CSS v3 to v4 Migration | Gemini AI](https://share.gemini.google/sXHvPL3hLOGN)
+
+```
+git checkout -b upgrade/tailwind
+```

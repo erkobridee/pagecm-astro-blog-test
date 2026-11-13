@@ -6,7 +6,7 @@ import { slugifyStr } from '@utils/slugify';
 type PostEntry = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts: PostEntry[] = await getCollection('blog');
 
   return posts
     .filter(({ data }) => !data.draft && !data.ogImage)

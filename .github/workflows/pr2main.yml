@@ -29,5 +29,14 @@ jobs:
       - name: Install
         run: npm i
 
+      - name: Prettier
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typescript
+        run: npm run tsc
+
       - name: Build
         run: npm run build

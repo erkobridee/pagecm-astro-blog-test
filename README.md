@@ -162,33 +162,8 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 
 - [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
 
-- [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
-
-  - [Removed: legacy content collections](https://docs.astro.build/en/guides/upgrade-to/v6/#removed-legacy-content-collections)
-
-  - [Astro v6 Docs](https://v6.docs.astro.build/en/getting-started/)
-
-    - [Content collections](https://v6.docs.astro.build/en/guides/content-collections/)
-
-  - [Zod migration guide to v4](https://zod.dev/v4/changelog)
-
-```
-git checkout -b upgrade/astro-v6
-```
-
-```
-npm i -S astro@6.4.8 @astrojs/rss@4.0.19 @astrojs/check@0.9.12 typescript@6.0.3
-```
-
-```
-npm i -D @astrojs/mdx@6.0.3 @astrojs/react@5.0.7 @astrojs/sitemap@3.7.3 @astrojs/markdown-remark@7.3.8 prettier-plugin-astro@1.1.2 eslint-plugin-astro@1.7.0 astro-eslint-parser@2.0.0 @types/react@18.3.31
-```
-
-<!--
-
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
 
 ```
-git checkout -b upgrade/deps
+git checkout -b upgrade/astro-v7
 ```
--->

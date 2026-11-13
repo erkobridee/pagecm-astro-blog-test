@@ -15,6 +15,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import { SITE } from './src/config';
 
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // https://github.com/eslint/eslint/discussions/15305
 import { readFileSync } from 'fs';
 const packageJSON = JSON.parse(
@@ -41,6 +46,11 @@ const baseConfig: AstroUserConfig = {
   vite: {
     optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@styles': path.resolve(__dirname, './src/styles'),
+      },
+    },
   },
 
   scopedStyleStrategy: 'where',

@@ -3,7 +3,6 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "jsx": "react-jsx",
     "paths": {
       "@assets/*": ["./src/assets/*"],
       "@config": ["./src/config.ts"],
@@ -11,10 +10,14 @@
       "@content/*": ["./src/content/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"]
     },
-    "strictNullChecks": true,
-    "allowJs": true
+    "verbatimModuleSyntax": true,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
   }
 }

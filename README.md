@@ -181,3 +181,5 @@ npm uninstall @typescript-eslint/parser
 ```
 npm install -D eslint@^10.0.0 @eslint/js@^10.0.0 globals typescript-eslint eslint-plugin-astro@latest astro-eslint-parser@latest
 ```
+
+- [Resolving Astro Build CSS Alias Error | Gemini AI](https://share.gemini.google/wVnqQohl9eGS)

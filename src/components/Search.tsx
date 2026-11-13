@@ -30,7 +30,7 @@ export default function SearchBar({ searchList }: Props) {
     null
   );
 
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value);
   };
 

@@ -7,8 +7,8 @@ import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
-
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 
 // https://tailwindcss.com/docs/installation/framework-guides/astro
 import tailwindcss from '@tailwindcss/vite';
@@ -27,14 +27,22 @@ const isGitHubPagesPreview = !!process.env.GITHUB_PAGES_PREVIEW;
 
 const baseConfig: AstroUserConfig = {
   integrations: [mdx(), react(), sitemap()],
+
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: 'Table of contents' }]],
+    processor: unified({
+      remarkPlugins: [
+        remarkToc,
+        [remarkCollapse, { test: 'Table of contents' }],
+      ],
+    }),
     shikiConfig: { theme: 'one-dark-pro', wrap: true },
   },
+
   vite: {
     optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     plugins: [tailwindcss()],
   },
+
   scopedStyleStrategy: 'where',
 };
 

@@ -157,29 +157,3 @@ Licensed under the MIT License, Copyright © 2026
 ---
 
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
-
-## 🚧 Upgrade
-
-- [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
-
-- [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
-
-  - [potentially breaking changes](https://docs.astro.build/en/guides/upgrade-to/v7/#breaking-changes)
-
-```
-git checkout -b upgrade/astro-v7
-```
-
-- [Migrate ESlint v8 to v10 | Gemine AI](https://share.gemini.google/T1b4b9AiULvu)
-
-  - [Ignore Files](https://eslint.org/docs/latest/use/configure/migration-guide#ignore-files)
-
-```
-npm uninstall @typescript-eslint/parser
-```
-
-```
-npm install -D eslint@^10.0.0 @eslint/js@^10.0.0 globals typescript-eslint eslint-plugin-astro@latest astro-eslint-parser@latest
-```
-
-- [Resolving Astro Build CSS Alias Error | Gemini AI](https://share.gemini.google/wVnqQohl9eGS)

@@ -33,25 +33,27 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
 
-      - name: Setup Node 24.x
-        uses: actions/setup-node@v7
+      # https://github.com/pnpm/action-setup
+      - uses: pnpm/setup@v3
         with:
-          node-version: 24.x
+          version: 12
+          runtime: node@26
+          install: false
 
-      - name: Install
-        run: npm i
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Prettier
-        run: npm run format:check
+        run: pnpm format:check
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Typescript
-        run: npm run tsc
+        run: pnpm tsc
 
       - name: Build
-        run: npm run gh-pages-build
+        run: pnpm gh-pages-build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

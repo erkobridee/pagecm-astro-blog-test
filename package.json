@@ -43,7 +43,7 @@
     "@tailwindcss/vite": "4.3.5",
     "@types/github-slugger": "2.0.0",
     "@types/react": "18.3.31",
-    "@typescript-eslint/parser": "6.21.0",
+    "@typescript-eslint/parser": "8.72.2",
     "astro-eslint-parser": "2.1.0",
     "commitizen": "4.3.2",
     "cross-env": "10.1.0",

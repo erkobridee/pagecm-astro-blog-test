@@ -164,6 +164,8 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
 
+  - [potentially breaking changes](https://docs.astro.build/en/guides/upgrade-to/v7/#breaking-changes)
+
 ```
 git checkout -b upgrade/astro-v7
 ```

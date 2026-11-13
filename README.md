@@ -169,3 +169,15 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 ```
 git checkout -b upgrade/astro-v7
 ```
+
+- [Migrate ESlint v8 to v10 | Gemine AI](https://share.gemini.google/T1b4b9AiULvu)
+
+  - [Ignore Files](https://eslint.org/docs/latest/use/configure/migration-guide#ignore-files)
+
+```
+npm uninstall @typescript-eslint/parser
+```
+
+```
+npm install -D eslint@^10.0.0 @eslint/js@^10.0.0 globals typescript-eslint eslint-plugin-astro@latest astro-eslint-parser@latest
+```

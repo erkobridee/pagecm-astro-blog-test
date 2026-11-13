@@ -160,11 +160,23 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 
 ## 🚧 Upgrade
 
-<!--
-
 - [Migrate astro v4 to astro v7 | Perplexity.ai](https://www.perplexity.ai/session/377dd123-2dd0-4c41-9ad0-f6a18cdda599)
 
 - [Upgrade to Astro v6 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v6/)
+
+```
+git checkout -b upgrade/astro-v6
+```
+
+```
+npm i -S astro@^6.0.0 @astrojs/rss@latest @astrojs/check@latest
+```
+
+```
+npm i -D @astrojs/mdx@latest @astrojs/react@latest @astrojs/sitemap@latest @tailwindcss/vite@latest prettier-plugin-astro@latest eslint-plugin-astro@latest astro-eslint-parser@latest
+```
+
+<!--
 
 - [Upgrade to Astro v7 | Astro Docs](https://docs.astro.build/en/guides/upgrade-to/v7/)
 
@@ -172,13 +184,3 @@ Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contrib
 git checkout -b upgrade/deps
 ```
 -->
-
-- [Upgrade guide | Tailwind CSS Docs](https://tailwindcss.com/docs/upgrade-guide) - Upgrading your Tailwind CSS projects from v3 to v4.
-
-  - [[Gist] Tailwind CSS v3 to v4 Migration Guide](https://gist.github.com/takunagai/148b5a564f1e75a9f44f6bd314b55801)
-
-  - [Tailwind CSS v3 to v4 Migration | Gemini AI](https://share.gemini.google/sXHvPL3hLOGN)
-
-```
-git checkout -b upgrade/tailwind
-```

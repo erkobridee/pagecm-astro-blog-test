@@ -15,6 +15,7 @@ const { activeNav } = Astro.props;
 
 <header>
   <a id="skip-to-content" href="#main-content">Skip to content</a>
+
   <div class="nav-container">
     <div class="top-nav-wrap">
       <a href={redefineUrl('/')} class="logo whitespace-nowrap">
@@ -33,6 +34,7 @@ const { activeNav } = Astro.props;
           )
         }
       </a>
+
       <nav id="nav-menu">
         <button
           class="hamburger-menu focus-outline"
@@ -59,8 +61,13 @@ const { activeNav } = Astro.props;
             <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
           </svg>
         </button>
-        <ul id="menu-items" class="display-none sm:flex">
-          <li>
+
+        {/* class="display-none sm:flex" */}
+        <ul
+          id="menu-items"
+          class="[&>li>a]:hover:text-accent mt-4 w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&>li]:h-8 [&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium sm:[&>li>a]:px-2 sm:[&>li>a]:py-1 hidden"
+        >
+          <li class="col-span-2">
             <a
               href={redefineUrl('/posts/')}
               class={activeNav === 'posts' ? 'active' : ''}
@@ -68,7 +75,8 @@ const { activeNav } = Astro.props;
               Posts
             </a>
           </li>
-          <li>
+
+          <li class="col-span-2">
             <a
               href={redefineUrl('/tags/')}
               class={activeNav === 'tags' ? 'active' : ''}
@@ -76,7 +84,8 @@ const { activeNav } = Astro.props;
               Tags
             </a>
           </li>
-          <li>
+
+          <li class="col-span-2">
             <a
               href={redefineUrl('/about/')}
               class={activeNav === 'about' ? 'active' : ''}
@@ -84,7 +93,8 @@ const { activeNav } = Astro.props;
               About
             </a>
           </li>
-          <li>
+
+          <li class="col-span-1 flex items-center justify-center">
             <LinkButton
               href={redefineUrl('/search/')}
               className={`focus-outline p-3 sm:p-1 ${
@@ -103,9 +113,10 @@ const { activeNav } = Astro.props;
               <span class="sr-only">Search</span>
             </LinkButton>
           </li>
+
           {
             SITE.lightAndDarkMode && (
-              <li>
+              <li class="col-span-1 flex items-center justify-center">
                 <button
                   id="theme-btn"
                   class="focus-outline"
@@ -136,6 +147,7 @@ const { activeNav } = Astro.props;
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
+
   .nav-container {
     @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
   }
@@ -155,22 +167,7 @@ const { activeNav } = Astro.props;
   nav {
     @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
-  nav ul {
-    @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0;
-  }
-  nav ul li {
-    @apply col-span-2 flex items-center justify-center;
-  }
-  nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
-  }
-  nav ul li:nth-last-child(2) a {
-    @apply w-auto;
-  }
-  nav ul li:nth-last-child(1),
-  nav ul li:nth-last-child(2) {
-    @apply col-span-1;
-  }
+
   nav a.active {
     @apply underline decoration-wavy decoration-2 underline-offset-4;
   }
@@ -184,6 +181,7 @@ const { activeNav } = Astro.props;
   nav button svg {
     @apply h-6 w-6 fill-skin-base hover:fill-skin-accent;
   }
+
   #theme-btn {
     @apply p-3 sm:p-1;
   }
@@ -208,19 +206,25 @@ const { activeNav } = Astro.props;
 <script>
   function toggleNav() {
     // Toggle menu
-    const menuBtn = document.querySelector('.hamburger-menu');
+    const menuBtn =
+      document.querySelector<HTMLButtonElement>('.hamburger-menu');
     const menuIcon = document.querySelector('.menu-icon');
     const menuItems = document.querySelector('#menu-items');
 
-    menuBtn?.addEventListener('click', () => {
-      const menuExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuIcon?.classList.toggle('is-active');
-      menuBtn.setAttribute('aria-expanded', menuExpanded ? 'false' : 'true');
-      menuBtn.setAttribute(
-        'aria-label',
-        menuExpanded ? 'Open Menu' : 'Close Menu'
-      );
-      menuItems?.classList.toggle('display-none');
+    if (!menuBtn || !menuItems || !menuIcon) return;
+
+    const openLabel = menuBtn.dataset.labelOpen ?? 'Open menu';
+    const closeLabel = menuBtn.dataset.labelClose ?? 'Close menu';
+
+    menuBtn.addEventListener('click', () => {
+      const openMenu = menuBtn.getAttribute('aria-expanded') === 'true';
+
+      menuBtn.setAttribute('aria-expanded', openMenu ? 'false' : 'true');
+      menuBtn.setAttribute('aria-label', openMenu ? openLabel : closeLabel);
+
+      menuItems.classList.toggle('hidden');
+
+      menuIcon.classList.toggle('is-active');
     });
   }
 

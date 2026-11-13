@@ -8,7 +8,7 @@
     "postinstall": "is-ci || npm run simple-git-hooks",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && jampack ./dist",
+    "build": "astro check && astro build && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",

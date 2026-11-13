@@ -25,11 +25,11 @@ During deveopment, it's okay to leave `SITE.website` empty. But in production mo
 ```js
 // file: src/config.ts
 export const SITE = {
-  website: "https://astro-paper.pages.dev/",
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
+  website: 'https://astro-paper.pages.dev/',
+  author: 'Sat Naing',
+  desc: 'A minimal, responsive and SEO-friendly Astro blog theme.',
+  title: 'AstroPaper',
+  ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes

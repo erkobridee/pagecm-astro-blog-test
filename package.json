@@ -44,7 +44,7 @@
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.5",
     "@types/github-slugger": "2.0.0",
-    "@types/react": "19.3.2",
+    "@types/react": "19.3.3",
     "@types/react-dom": "19.3.0",
     "astro-eslint-parser": "3.2.0",
     "commitizen": "4.3.2",
